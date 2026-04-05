@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class OrderTest {
 
     @RegisterExtension
-    private final DriverExtension extension = new DriverExtension();
+    final DriverExtension extension = new DriverExtension();
 
     static Stream<Object[]> orderData() {
         return Stream.of(

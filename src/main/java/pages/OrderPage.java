@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class OrderPage {
 
@@ -55,7 +57,8 @@ public class OrderPage {
     }
 
     public void fillOrderDetails() {
-        driver.findElement(dateInput).sendKeys("01.04.2026");
+        String tomorrow = LocalDate.now().plusDays(1).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+        driver.findElement(dateInput).sendKeys(tomorrow);
         driver.findElement(dateInput).sendKeys(Keys.ESCAPE);
         new WebDriverWait(driver, Duration.ofSeconds(5))
                 .until(ExpectedConditions.invisibilityOfElementLocated(By.className("react-datepicker")));

@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class FaqTest {
 
     @RegisterExtension
-    private final DriverExtension extension = new DriverExtension();
+    final DriverExtension extension = new DriverExtension();
 
     @ParameterizedTest
     @CsvSource({
